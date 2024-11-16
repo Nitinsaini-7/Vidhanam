@@ -53,7 +53,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="mt-10">
+    <section className="mt-20">
       <div className="text-center">
         <Title text1={"Testimonials"} />
       </div>

@@ -11,7 +11,7 @@ import { faLocationDot, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-900">
+    <footer className="bg-zinc-900 mt-20">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
@@ -52,6 +52,9 @@ const Footer = () => {
                   <Link
                     className="text-white transition hover:text-white/75"
                     to="#"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     How it Works
                   </Link>
@@ -60,25 +63,22 @@ const Footer = () => {
                 <li>
                   <Link
                     className="text-white transition hover:text-white/75"
-                    to="/"
+                    to="/testimonials"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
-                    Meet the Team
+                    Testimonials
                   </Link>
                 </li>
 
                 <li>
                   <Link
                     className="text-white transition hover:text-white/75"
-                    to="#"
-                  >
-                    Testimonial
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    className="text-white transition hover:text-white/75"
-                    to="#"
+                    to="blog"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     Blogs
                   </Link>
@@ -100,6 +100,9 @@ const Footer = () => {
                   <Link
                     className="text-white transition hover:text-white/75"
                     to="/about"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     About Us
                   </Link>
@@ -128,6 +131,9 @@ const Footer = () => {
                   <Link
                     className="text-white transition hover:text-white/75"
                     to="#"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     Will Drafting
                   </Link>
@@ -137,6 +143,9 @@ const Footer = () => {
                   <Link
                     className="text-white transition hover:text-white/75"
                     to="#"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     Will Review
                   </Link>
@@ -146,6 +155,9 @@ const Footer = () => {
                   <Link
                     className="text-white transition hover:text-white/75"
                     to="#"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     Will Registration
                   </Link>
@@ -155,6 +167,9 @@ const Footer = () => {
                   <Link
                     className="text-white transition hover:text-white/75"
                     to="#"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     Will Probate
                   </Link>
@@ -170,6 +185,9 @@ const Footer = () => {
                   <Link
                     className="text-white transition hover:text-white/75"
                     to="#"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     Terms of Use
                   </Link>
@@ -179,6 +197,9 @@ const Footer = () => {
                   <Link
                     className="text-white transition hover:text-white/75"
                     to="#"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     Privacy Policy
                   </Link>
@@ -232,6 +253,9 @@ const Footer = () => {
               <Link
                 className="inline-block text-white underline transition hover:text-white/75"
                 to="#"
+                onClick={()=>{
+                  window.scroll(0,0);
+                }}
               >
                 Terms & Conditions
               </Link>
@@ -248,7 +272,11 @@ const Footer = () => {
 
         
           <p className="mt-4 text-sm text-white sm:mt-0">
-            <Link to={""}>
+            <Link to={""}
+              onClick={()=>{
+                window.scroll(0,0);
+              }}
+            >
                Made by SR Techlology
             </Link>
           </p>

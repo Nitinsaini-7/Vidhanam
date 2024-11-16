@@ -28,7 +28,7 @@ const Faqs = () => {
     ]
   
     return (
-        <section className="leading-relaxed max-w-screen-xl mt-14 mx-auto px-4 md:px-8">
+        <section className="leading-relaxed max-w-screen-xl mt-20 mx-auto px-4 md:px-8">
             <div className="text-center">
                 <Title text1={"Frequently Asked Questions (FAQs)"}/>
             </div>

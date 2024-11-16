@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Testimonials from './pages/Testimonials';
 
 const App = () => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/faqs" element={<Faqs />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
