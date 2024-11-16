@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/logo.svg"
+import logo from "../data";
 import linkedin from '../assets/images/linkedin.png'
 import x from '../assets/images/x.png'
 import instagram from '../assets/images/instagram.png'
@@ -15,8 +15,11 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <div className="flex justify-center text-white sm:justify-start">
-              <img src={logo} alt="" />
+            <div className="md:block flex items-center justify-center">
+            <div className="flex justify-center bg-white w-14 h-14 items-center rounded-full ">
+              <img src={logo} className="w-10" alt="" />
+            </div>
+
             </div>
 
             <p className="mt-6 max-w-md text-center leading-relaxed text-white sm:max-w-xs sm:text-left">

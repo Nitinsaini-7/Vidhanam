@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/images/logo.svg";
+import logo from "../data";
 
 const Navbar = () => {
   const [state, setState] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <nav
       style={{ background: "" }}
-      className=" bg-indigo-200 shadow-lg w-full md:py-1 py-2 z-50 fixed top-0 left-0 md:text-sm"
+      className=" bg-indigo-200 shadow-lg w-full py-0 z-50 fixed top-0 left-0 md:text-sm"
     >
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -26,7 +26,10 @@ const Navbar = () => {
             }}
             to="/"
           >
-            <img src={logo} width={120} height={50} alt="Float UI logo" />
+            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+
+            <img src={logo} className="w-6" alt="Float UI logo" />
+            </div>
           </Link>
           <div className="md:hidden">
             <button
@@ -99,7 +102,7 @@ const Navbar = () => {
                   onClick={() => {
                     window.scroll(0, 0);
                   }}
-                  className="block p-3 px-5 text-center bg-white text-gray-700 duration-200 hover:text-indigo-600 border rounded-lg md:border-none"
+                  className="block p-2 px-5 font-medium text-center bg-white text-gray-700 duration-200 hover:text-indigo-600 border rounded-lg md:border-none"
                 >
                   Log in
                 </Link>
@@ -110,7 +113,7 @@ const Navbar = () => {
                   onClick={() => {
                     window.scroll(0, 0);
                   }}
-                  className="block p-3 px-5 font-medium text-center text-white bg-indigo-600 duration-200 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
+                  className="block p-2 px-5 font-medium text-center text-white bg-indigo-600 duration-200 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
                 >
                   Sign in
                 </Link>

@@ -15,7 +15,7 @@ const Signup = () => {
     <div className="w-full h-screen flex flex-col items-center justify-center px-5">
       <div className="max-w-lg p-5 py-10 space-y-4 w-full hover:shadow-xl duration-200 border border-gray-50 text-gray-600 shadow-[rgba(17,_17,_26,_0.1)_0px_4px_12px] rounded-md ">
         <div className="text-center">
-          <img src={logo} width={150} className="mx-auto" />
+          <img src={logo} width={50} className="mx-auto" />
           <div className="mt-5 space-y-2">
             <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
               Create an account

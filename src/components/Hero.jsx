@@ -17,9 +17,9 @@ const Hero = () => {
       >
         <div className="flex items-center justify-center text-center">
           <div className="">
-            <div className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 via-indigo-600 to-indigo-300">
+            <div className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-500 to-red-500">
               <p className="text-3xl md:text-6xl text-white">Welcome to</p>
-              <h2 className=" text-5xl md:text-8xl py-2 uppercase ">company name</h2>
+              <h2 className=" text-5xl md:text-8xl py-2 uppercase ">Vidhanam</h2>
             </div>
 
           <TypeAnimation

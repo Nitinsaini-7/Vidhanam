@@ -18,7 +18,7 @@ const Login = () => {
         <div className="text-center">
           <img
             src={logo}
-            width={150}
+            width={50}
             className="mx-auto"
           />
           <div className=" mt-5 space-y-2">
