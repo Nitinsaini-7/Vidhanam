@@ -109,6 +109,9 @@ const Footer = () => {
                   <Link
                     className="text-white transition hover:text-white/75"
                     to="/contact"
+                    onClick={()=>{
+                      window.scroll(0,0);
+                    }}
                   >
                     Contact Us
                   </Link>

@@ -62,14 +62,14 @@ const Navbar = () => {
                             })
                         }
                         <span className='hidden w-px h-6 bg-gray-300 md:block'></span>
-                        <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0'>
+                        <div className='space-y-3 items-center gap-4 md:flex md:space-y-0'>
                             <li>
-                                <Link to={"/login"} className="block py-3 px-4 text-center bg-white text-gray-700 hover:text-indigo-600 border rounded-lg md:border-none">
+                                <Link to={"/login"} className="block p-3 px-5 text-center bg-white text-gray-700 duration-200 hover:text-indigo-600 border rounded-lg md:border-none">
                                     Log in
                                 </Link>
                             </li>
                             <li>
-                                <Link to={"/signup"} className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline">
+                                <Link to={"/signup"} className="block p-3 px-5 font-medium text-center text-white bg-indigo-600 duration-200 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline">
                                     Sign in
                                 </Link>
                             </li>

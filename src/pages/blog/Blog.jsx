@@ -4,7 +4,7 @@ import { blogData } from "../../data";
 
 const Blog = () => {
   return (
-    <section className="mt-14">
+    <section className="mt-20">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <div className="text-center">
           <Title text1={"Blogs"} />

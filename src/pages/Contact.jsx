@@ -1,6 +1,7 @@
 import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import Title from "../components/Title";
 
 const Contact = () => {
   const contactMethods = [
@@ -19,8 +20,12 @@ const Contact = () => {
   ];
 
   return (
-    <div className="py-20">
-      <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+    <div className="mt-20">
+      <div className="text-center">
+
+      <Title text1={"Contact Us"}/>
+      </div>
+      <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8 mt-10">
         <div className="max-w-lg mx-auto gap-20 justify-center lg:flex lg:max-w-none">
           <div className="flex items-center justify-center">
 
@@ -55,6 +60,7 @@ const Contact = () => {
                 <input
                   type="text"
                   required
+                  placeholder="Name"
                   className="w-full px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                 />
               </div>
@@ -63,6 +69,7 @@ const Contact = () => {
                 <input
                   type="email"
                   required
+                  placeholder="Email address"
                   className="w-full px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                 />
               </div>
@@ -71,6 +78,7 @@ const Contact = () => {
                 <input
                   type="text"
                   required
+                  placeholder="Subject"
                   className="w-full px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                 />
               </div>
@@ -78,6 +86,7 @@ const Contact = () => {
                 <label className="font-medium">Message</label>
                 <textarea
                   required
+                  placeholder="Message"
                   className="w-full h-32 px-3 py-2 resize-none appearance-none bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                 ></textarea>
               </div>
