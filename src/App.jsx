@@ -11,16 +11,20 @@ import Footer from './components/Footer';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Testimonials from './pages/Testimonials';
+import Error from './pages/Error';
 
 const App = () => {
   const location = useLocation();
 
-  // Check if the current path is /login or /signup
-  const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
+  // Define routes where Navbar and Footer should be hidden
+  const hideNavbarFooterRoutes = ['/login', '/signup'];
+  const isErrorPage = location.pathname === '*' || !['/', '/about', '/blog', '/blog/:id', '/faqs', '/contact', '/signup', '/login', '/testimonials'].includes(location.pathname);
+
+  const shouldHideNavbarFooter = hideNavbarFooterRoutes.includes(location.pathname) || isErrorPage;
 
   return (
     <div>
-      {!isAuthPage && <Navbar />}
+      {!shouldHideNavbarFooter && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -31,8 +35,9 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Error />} />
       </Routes>
-      {!isAuthPage && <Footer />}
+      {!shouldHideNavbarFooter && <Footer />}
     </div>
   );
 };

@@ -2,13 +2,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { blogDetailsData } from "../../data";
+import Error from "../Error";
 
 const BlogDetail = () => {
   const { id } = useParams();
   const blog = blogDetailsData.find((b) => b.id === (id));
 
   if (!blog) {
-    return <div>Blog not found</div>;
+    return <div>
+      <Error/>
+    </div>;
   }
 
   return (

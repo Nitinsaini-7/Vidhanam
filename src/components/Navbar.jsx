@@ -16,10 +16,10 @@ const Navbar = () => {
   return (
     <nav
       style={{ background: "" }}
-      className=" bg-indigo-200 shadow-lg w-full py-0 z-50 fixed top-0 left-0 md:text-sm"
+      className=" bg-indigo-100 backdrop-blur-md bg-opacity-70 shadow-lg w-full py-0 z-50 fixed top-0 left-0 md:text-sm"
     >
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
-        <div className="flex items-center justify-between py-3 md:py-5 md:block">
+        <div className="flex items-center justify-between py-2 md:py-3 md:block">
           <Link
             onClick={() => {
               window.scroll(0, 0);
