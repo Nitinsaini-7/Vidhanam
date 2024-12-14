@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Title from "../components/Title";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const contactMethods = [
@@ -38,11 +39,11 @@ const Contact = () => {
 
     try {
       const response = await axios.post("http://localhost:3000/data", data);
-      alert(response.data.message);
+      toast.success(response.data.message);
       e.target.reset();
     } catch (error) {
       console.error("Error submitting the form", error);
-      alert("Failed to submit the form. Please try again later.");
+      toast.error("Failed to submit the form. Please try again later.");
     }
   };
 
