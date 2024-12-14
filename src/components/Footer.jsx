@@ -275,11 +275,7 @@ const Footer = () => {
 
         
           <p className="mt-4 text-sm text-white sm:mt-0">
-            <Link to={"https://shreeradhatechnology.com/"}
-              onClick={()=>{
-                window.scroll(0,0);
-              }}
-            >
+            <Link to={"https://shreeradhatechnology.com/"}>
                Made by SR Techlology
             </Link>
           </p>
