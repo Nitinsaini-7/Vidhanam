@@ -3,13 +3,55 @@ import { Link } from "react-router-dom";
 import logo from "../data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { toast } from 'react-toastify';
+import { AuthContext } from "../context/AuthContext";
+import axios from 'axios';
 
 const Signup = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   const [showPassword, setShowPassword] = useState(false);
+  const {token, setToken, navigate, backendUrl} = useContext(AuthContext)
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
+
+  const onSubmitHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(backendUrl + "/api/user/signup", {
+        name,
+        email,
+        password,
+      });
+
+      if (response.data.success) {
+        setToken(response.data.token);
+        
+        
+        localStorage.setItem("token", response.data.token);
+        toast.success("Registered Successfuly");
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
+  };
+
+  useEffect(() => {
+    if (token) {
+      navigate("/");
+    }
+  }, [token]);
+
 
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center px-5">
@@ -23,10 +65,12 @@ const Signup = () => {
           </div>
         </div>
 
-        <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+        <form onSubmit={onSubmitHandler} className="space-y-5">
           <div>
             <label className="font-medium">Name</label>
             <input
+            onChange={(e)=>setName(e.target.value)} value={name}
+            name="name"
               type="text"
               required
               placeholder="Name"
@@ -36,6 +80,8 @@ const Signup = () => {
           <div>
             <label className="font-medium">Email</label>
             <input
+            onChange={(e)=>setEmail(e.target.value)} value={email}
+            name="email"
               type="email"
               required
               placeholder="Email address"
@@ -46,6 +92,8 @@ const Signup = () => {
             <label className="font-medium">Password</label>
             <div className="relative">
               <input
+              onChange={(e)=>setPassword(e.target.value)} value={password}
+              name="password"
                 type={showPassword ? "text" : "password"}
                 required
                 placeholder="Password"

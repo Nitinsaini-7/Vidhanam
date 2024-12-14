@@ -26,7 +26,7 @@ const Blog = () => {
                   <span className="block text-indigo-600 text-sm">
                     {items.date}
                   </span>
-                  <h3 className="text-lg text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">
+                  <h3 className="text-lg text-gray-800 duration-150 font-semibold">
                     {items.title}
                   </h3>
                   <p className="text-gray-600 text-sm duration-150 group-hover:text-gray-800">

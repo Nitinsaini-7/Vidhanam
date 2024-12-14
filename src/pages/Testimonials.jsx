@@ -1,38 +1,11 @@
 import React from "react";
 import Title from "../components/Title";
-import testimonials1 from "../assets/images/testimonials1.png";
-import testimonials2 from "../assets/images/testimonials2.png";
-
+import { testimonialsData } from "../data";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const Testimonials = () => {
-  const data = [
-    {
-      name: "Bharat",
-      service: "Rental Agreement",
-      image: `${testimonials1}`,
-      desc: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.",
-    },
-    {
-      name: "Aarti",
-      service: "Rental Agreement",
-      image: `${testimonials2}`,
-      desc: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.",
-    },
-    {
-      name: "Saurabh",
-      service: "Food License",
-      image: `${testimonials1}`,
-      desc: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.",
-    },
-    {
-      name: "Rakhi",
-      service: "Company Incorporation",
-      image: `${testimonials2}`,
-      desc: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.",
-    },
-  ];
+ 
 
   const responsive = {
     desktop: {
@@ -74,7 +47,7 @@ const Testimonials = () => {
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
-        {data.map((item, index) => (
+        {testimonialsData.map((item, index) => (
           <div
             key={index}
             className="flex flex-col mt-10 md:mx-20 mx-10 lg:mx-28 my-6 shadow-[rgba(17,_17,_26,_0.1)_0px_4px_12px] rounded-md"

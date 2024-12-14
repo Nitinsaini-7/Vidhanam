@@ -1,9 +1,22 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../data";
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
+import { useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [state, setState] = useState(false);
+
+  const { navigate, token, setToken } = useContext(AuthContext);
+
+  const logout = () => {
+    navigate("/login");
+    localStorage.removeItem("token");
+    setToken("");
+  };
 
   // Replace  paths with your paths
   const navigation = [
@@ -27,8 +40,7 @@ const Navbar = () => {
             to="/"
           >
             <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-
-            <img src={logo} className="w-6" alt="Float UI logo" />
+              <img src={logo} className="w-6" alt="Float UI logo" />
             </div>
           </Link>
           <div className="md:hidden">
@@ -74,50 +86,73 @@ const Navbar = () => {
           }`}
         >
           <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
-            {navigation.map((item, index) => {
-              return (
-                <li
-                  key={index}
-                  onClick={() => {
-                    window.scroll(0, 0);
-                  }}
-                  className=" hover:text-indigo-600 text-lg"
+            {navigation.map((item, index) => (
+              <li
+                key={index}
+                onClick={() => {
+                  window.scroll(0, 0);
+                }}
+                className=" hover:text-indigo-600 text-lg duration-200"
+              >
+                <NavLink
+                  to={item.path}
+                  onClick={() => setState(false)}
+                  className="block"
                 >
-                  <NavLink
-                    to={item.path}
-                    onClick={() => setState(false)}
-                    className="block"
-                  >
-                    <p>{item.title}</p>
-                    <hr className="w-4/4 border-none h-1 bg-indigo-600 hidden" />
-                  </NavLink>
-                </li>
-              );
-            })}
+                  <p>{item.title}</p>
+                  <hr className="w-4/4 border-none h-1 bg-indigo-600 hidden" />
+                </NavLink>
+              </li>
+            ))}
+            <li className="hover:text-indigo-600 text-lg duration-200">
+              {
+                <NavLink to={"/pricing"} onClick={() => setState(false)}>
+                  <p>Pricing</p>
+                  <hr className="w-4/4 border-none h-1 bg-indigo-600 hidden" />
+                </NavLink>
+              }
+            </li>
+            <p></p>
             <span className="hidden w-px h-6 bg-gray-300 md:block"></span>
-            <div className="space-y-3 items-center gap-4 md:flex md:space-y-0">
-              <li>
-                <Link
-                  to={"/login"}
-                  onClick={() => {
-                    window.scroll(0, 0);
-                  }}
-                  className="block p-2 px-5 font-medium text-center bg-white text-gray-700 duration-200 hover:text-indigo-600 border rounded-lg md:border-none"
+            <div className="">
+              {token ? (
+                <button
+                  onClick={logout}
+                  className="bg-red-500 flex gap-2 items-center justify-center p-2 text-white rounded-md"
                 >
-                  Log in
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={"/signup"}
-                  onClick={() => {
-                    window.scroll(0, 0);
-                  }}
-                  className="block p-2 px-5 font-medium text-center text-white bg-indigo-600 duration-200 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
-                >
-                  Sign in
-                </Link>
-              </li>
+                  Logout{" "}
+                  <FontAwesomeIcon
+                    className="text-white rounded-full"
+                    icon={faArrowRightFromBracket}
+                  />
+                </button>
+              ) : (
+                <div className="space-y-3 items-center gap-4 md:flex md:space-y-0">
+                  <li>
+                    <Link
+                      to={"/login"}
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                      className="block p-2 px-5 font-medium text-center bg-white text-gray-700 duration-200 hover:text-indigo-600 border rounded-lg md:border-none"
+                    >
+                      Log in
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"/signup"}
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                      className="block p-2 px-5 font-medium text-center text-white bg-indigo-600 duration-200 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
+                    >
+                      Sign in
+                    </Link>
+                  </li>
+                </div>
+              )}
+              <div></div>
             </div>
           </ul>
         </div>
