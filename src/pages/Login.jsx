@@ -54,7 +54,7 @@ const Login = () => {
 
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center px-5">
-      <div className="max-w-lg py-10 space-y-4 w-full hover:shadow-xl duration-200 border border-gray-50 text-gray-600 shadow-[rgba(17,_17,_26,_0.1)_0px_4px_12px] rounded-md p-5">
+      <div className="max-w-lg p-5 space-y-4 w-full hover:shadow-xl duration-200 border border-gray-50 text-gray-600 shadow-[rgba(17,_17,_26,_0.1)_0px_4px_12px] rounded-md">
         <div className="text-center">
           <img src={logo} width={50} className="mx-auto" />
           <div className=" mt-5 space-y-2">
@@ -94,9 +94,9 @@ const Login = () => {
                 className="absolute right-2 top-2 text-gray-500 hover:text-indigo-600"
               >
                 {showPassword ? (
-                  <FontAwesomeIcon icon={faEyeSlash} />
-                ) : (
                   <FontAwesomeIcon icon={faEye} />
+                ) : (
+                  <FontAwesomeIcon icon={faEyeSlash} />
                 )}
               </button>
             </div>
@@ -104,11 +104,7 @@ const Login = () => {
           <button className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
             Sign in
           </button>
-          {/* <div className="text-center">
-            <Link to=""  className="hover:text-indigo-600">
-              Forgot password?
-            </Link>
-          </div> */}
+          
         </form>
         <div className="py-2 text-center">
           <p className="">

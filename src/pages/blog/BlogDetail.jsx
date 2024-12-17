@@ -3,6 +3,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { blogDetailsData } from "../../data";
 import Error from "../Error";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -15,6 +17,8 @@ const BlogDetail = () => {
   }
 
   return (
+    <>
+    <Navbar/>
     <div className="container mx-auto p-4 mt-20">
       <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
       <div>
@@ -44,6 +48,8 @@ const BlogDetail = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
